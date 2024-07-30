@@ -1,0 +1,135 @@
+% All the other pages' style
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RO,LE]{\color{white}\shortTitle}
+\fancyfoot[RO,RE]{Page $|$ \thepage}
+
+\fancypagestyle{plain}
+{
+\fancyfoot[LO,LE]{\color{black}\shortTitle}
+\fancyfoot[RO,RE]{Page $|$ \thepage}
+}
+
+% The title page style
+\fancypagestyle{firststyle}
+{
+   \fancyhead[L]{}
+   \fancyfoot[]{}
+}
+
+
+\backgroundsetup{
+scale=1,
+color=black,
+opacity=1.0,
+angle=0,
+contents={%
+  \includegraphics[width=\paperwidth,height=\paperheight]{template/title_background.pdf}
+  }%
+}
+
+% Define the command to surround the text in angle brackets
+\newcommand{\brackets}[1]{\textlangle{}#1\textrangle{}}
+
+% For formatting code
+\newcommand{\codeblock}[1]{\texttt{#1}}
+
+%increase space after captions
+\setlength{\belowcaptionskip}{2pt}
+
+% No indenting at the start of a paragraph
+\setlength{\parindent}{0pt}
+
+%increase space between paragraphs
+\parskip 1em
+
+\titleformat{\chapter}{\Huge\bfseries}{\thechapter. }{0pt}{\Huge\bfseries}
+
+% set the section numbering depth and TOC depth
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Use a continuous counting scheme for floats
+\counterwithout{table}{chapter}
+
+\let\DeclareUSUnit\DeclareSIUnit
+\let\US\SI
+\DeclareUSUnit\F{F}
+\DeclareUSUnit\ft{ft}
+
+% Set list spacing to zero
+%\setitemize{itemsep=0em}
+
+\begin{document}
+
+% Clear the header/footer until TOC
+\pagenumbering{roman}
+
+\begin{titlepage}
+
+   \BgThispage
+   \thispagestyle{firststyle}
+
+   \vspace*{\fill}
+
+   \hspace{0.19\textwidth}
+   \begin{minipage}[l][][c]{0.8\textwidth}
+   \begin{flushright}
+   \makeatletter
+   {\huge\color{white}\bf .}\\
+   \vspace{3cm}
+   {\Huge\fontfamily{phv}\selectfont\color{TitleBlue}\bf
+   % Title of the document
+   \@title\par
+   }
+   {\Large\fontfamily{phv}\selectfont\color{TitleBlue}\bf
+   \subtitle\par
+   }
+   \vspace*{30pt}
+   {\huge\bf
+   \publicationDate
+
+   }
+   \vspace*{30pt}
+   % Authors
+   {\Large\bf\setlength{\parskip}{0pt}
+   \@author
+
+   }
+   \makeatother
+
+
+   \end{flushright}
+   \end{minipage}
+
+   \vspace*{\fill}
+
+\vspace{1cm}
+
+
+   \end{titlepage}
+
+   \pagestyle{fancy}
+
+   \vspace*{\fill}
+
+   \captionsetup{justification=centering}
+   \begin{table}[H]
+   \centering
+   \caption*{\Large\bfseries{Revision Log}}
+   \begin{tabular}{rrrr}
+   \toprule
+   \textbf{Revision} & \textbf{Date} & \textbf{Affected Pages} & \textbf{Revision Description} \\
+   \midrule
+   1 &  & All & Initial Release \\
+   & & & \\
+   \bottomrule
+   \end{tabular}
+   \end{table}
+
+   \vspace*{\fill}
+
+   \captionsetup{justification=justified}
+
+   \vspace*{\fill}

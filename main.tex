@@ -1,0 +1,35 @@
+% !TeX root = main.tex
+\input{template/pre_title}
+
+\title{Your Title}
+\author{Author 1\\
+Author 2\\
+Author 3}
+
+\input{template/post_title}
+
+% no abstract in users' manual
+%\input{abstract}
+
+\chapter*{Acronyms}
+\input{acronym}
+
+\tableofcontents
+
+% \listoffigures
+
+% \listoftables
+
+\clearpage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\chapter{Introduction}\label{chap:intro}
+
+\input{introduction.tex}
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\addcontentsline{toc}{chapter}{References}
+
+\input{template/post_document}
